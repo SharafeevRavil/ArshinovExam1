@@ -1,0 +1,15 @@
+﻿@model List<string>
+
+<div class="text-center">
+    @foreach (var url in Model)
+    {
+        <h1>@url</h1>
+    }
+    <form method="post" action="/Scan/SaveResults">
+        @foreach (var url in Model)
+         {
+            <input type="hidden" name="urls" value="@url" />
+         }
+        <input type="submit" value="Сохранить"/>
+    </form>
+</div>

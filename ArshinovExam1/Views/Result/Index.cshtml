@@ -1,0 +1,18 @@
+﻿@model List<ArshinovExam1.Models.Site>
+
+<form method="post" action="/Result/Index">
+    <input type="text" name="domain" />
+    <input type="submit" value="Сохранить"/>
+</form>
+@if (Model != null)
+{
+    <table>
+        @foreach (var site in Model)
+        {
+            <tr>
+                <tb>@site.Url</tb>
+                <tb>@site.Text</tb>
+            </tr>
+        }
+    </table>
+}
